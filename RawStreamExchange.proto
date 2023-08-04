@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+option csharp_namespace = "NetSend.Proto";
+
+package RawStreamExchange;
+
+service RawStreamExchange{
+  rpc StartStream (stream StreamChunk) returns (stream StreamChunk);
+}
+
+//message RawStreamRequest{
+//  string Message = 1;
+//}
+
+message StreamChunk{
+  bytes Data = 1;
+}
