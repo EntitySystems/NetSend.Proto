@@ -1,0 +1,40 @@
+syntax = "proto3";
+option csharp_namespace = "NetSend.Proto";
+
+package AuthExchange;
+
+service AuthExchange{
+  //  stream SSD()
+  rpc Register (RegisterMessage) returns (RegisterResponse);
+  rpc SetUsername (SetUsernameMessage) returns (SetUsernameResponse);
+  rpc SetAvatar (SetAvatarMessage) returns (SetAvatarResponse);
+}
+
+message RegisterMessage{
+  string PublicSigningKey = 1;
+  string Uuid = 2;
+}
+
+message RegisterResponse{
+  bool Success = 1;
+  optional string JsonSessionToken = 2;
+  optional string Error = 3;
+}
+
+message SetUsernameMessage{
+  string Username = 1;
+}
+
+message SetUsernameResponse{
+  bool Success = 1;
+  optional string Error = 2;
+}
+
+message SetAvatarMessage{
+  bytes FileBytes = 1;
+}
+
+message SetAvatarResponse{
+  bool Success = 1;
+  optional string Error = 2;
+}
