@@ -1,0 +1,16 @@
+﻿syntax = "proto3";
+option csharp_namespace = "NetSend.Proto";
+
+package ChatRoomsExchange;
+
+service ChatRoomsExchange{
+  
+}
+
+message StartFullStateStreamMessage{
+  
+}
+
+message FullStateStreamResponse{
+  
+}
